@@ -2,10 +2,6 @@
 title: Happy Birthday Britt!
 help_list:
   - {
-      title: "new key caps",
-      target: "https://drop.com/buy/drop-olkb-preonic-acute-keycaps",
-  }
-  - {
       title: "a how to program your planck",
       target: "https://www.reddit.com/r/olkb/comments/tsmoy2/planck_layout_on_macos/",
   }
@@ -13,16 +9,20 @@ help_list:
       title: "typing tests",
       target: "https://www.youtube.com/watch?v=fve-fuYkAkA",
   }
+image_page_list:
+  - "https://drop.com/buy/planck-mechanical-keyboard?defaultSelectionIds=984963"
+  - "https://drop.com/buy/drop-olkb-preonic-acute-keycaps"
 ---
 
-<h1>happy birthday</h1>
+<h1>happy birthday britt!</h1>
 
 <% current_page.data.help_list.each do |link| %>
   <div class="dashboard-links">
     <%= link_to(link.title, link.target, target: "_blank") %>
   </div>
 <% end %>
-
-<div class="dashboard-images">
-  <%= make_links() %>
-</div>
+<% current_page.data.image_page_list.each do |link| %>
+  <div class="dashboard-images">
+    <%= make_images(link) %>
+  </div>
+<% end %>

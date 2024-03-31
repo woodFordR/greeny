@@ -13,8 +13,8 @@ class ImageTracker < Middleman::Extension
   ##
   # The grab_links method parses a website for image urls
 
-  def grab_links
-    image_urls = URI.open("https://drop.com/buy/drop-olkb-preonic-acute-keycaps") do |f|
+  def grab_links(uri)
+    image_urls = URI.open(uri) do |f|
       f.read.scan(/.*?<link.*?as="image" href=(".*?").*?/m)
     end
     image_urls.map { |f| /.*(https.*\.png).*/.match(f[0])[1] }
@@ -25,8 +25,8 @@ class ImageTracker < Middleman::Extension
     ##
     # The make_links helper method allows a template to display the image url
 
-    def make_links()
-      link_tos = grab_links.uniq[0,3].map { |url| "<img src=#{url} />" }
+    def make_images(uri)
+      link_tos = grab_links(uri).uniq[0,3].map { |x| "<img src=#{x} />" }
 
       link_tos.join("\n")
     end
