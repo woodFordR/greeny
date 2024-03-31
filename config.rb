@@ -1,6 +1,9 @@
-# Activate and configure extensions
-# https://middlemanapp.com/advanced/configuration/#configuring-extensions
+Middleman::Extensions.register :image_tracker do
+  require "extensions/image_tracker"
+  ImageTracker
+end
 
+activate :image_tracker
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
