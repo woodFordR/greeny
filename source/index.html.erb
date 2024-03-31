@@ -18,11 +18,11 @@ help_list:
 <h1>happy birthday</h1>
 
 <% current_page.data.help_list.each do |link| %>
-  <div className>
+  <div class="dashboard-links">
     <%= link_to(link.title, link.target, target: "_blank") %>
   </div>
 <% end %>
 
-<div>
-  <%= make_links("keyboard") %>
+<div class="dashboard-images">
+  <%= make_links() %>
 </div>
