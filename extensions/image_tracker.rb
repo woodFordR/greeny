@@ -26,7 +26,7 @@ class ImageTracker < Middleman::Extension
     # The make_links helper method allows a template to display the image url
 
     def make_links()
-      link_tos = grab_links.map { |url| "<img src=#{url} />" }
+      link_tos = grab_links.uniq[0,3].map { |url| "<img src=#{url} />" }
 
       link_tos.join("\n")
     end
