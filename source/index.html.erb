@@ -2,6 +2,10 @@
 title: Welcome to Middleman
 help_list:
   - {
+      title: "new key caps",
+      target: "https://drop.com/buy/drop-olkb-preonic-acute-keycaps",
+  }
+  - {
       title: "a how to program your planck",
       target: "https://www.reddit.com/r/olkb/comments/tsmoy2/planck_layout_on_macos/",
   }
@@ -14,7 +18,7 @@ help_list:
 <h1>happy birthday</h1>
 
 <% current_page.data.help_list.each do |link| %>
-  <div>
+  <div className>
     <%= link_to(link.title, link.target, target: "_blank") %>
   </div>
 <% end %>
