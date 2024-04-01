@@ -47,3 +47,7 @@ page '/*.txt', layout: false
 #   activate :minify_css
 #   activate :minify_javascript, compressor: Terser.new
 # end
+activate :deploy do |deploy|
+  deploy.deploy_method   = :git
+  deploy.branch   = ''
+end
