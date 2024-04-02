@@ -1,25 +1,39 @@
+##
+# Configuration for application
+
+##
+# Extension activation in config
+
 Middleman::Extensions.register :image_tracker do
   require "extensions/image_tracker"
   ImageTracker
 end
 
 activate :image_tracker
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
-# Layouts
-# https://middlemanapp.com/basics/layouts/
+##
+# Deployment in config
+activate :deploy do |deploy|
+  deploy.deploy_method   = :git
+  deploy.branch   = ''
+end
 
-# Per-page layout changes
+##
+# Layout in config
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-# With alternative layout
+##
+# Extra Tips
+# with alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
-# Proxy pages
+# proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
 # proxy(
@@ -30,8 +44,8 @@ page '/*.txt', layout: false
 #   },
 # )
 
-# Helpers
-# Methods defined in the helpers block are available in templates
+# helpers
+# methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
 
 # helpers do
@@ -40,14 +54,10 @@ page '/*.txt', layout: false
 #   end
 # end
 
-# Build-specific configuration
+# build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
 # configure :build do
 #   activate :minify_css
 #   activate :minify_javascript, compressor: Terser.new
 # end
-activate :deploy do |deploy|
-  deploy.deploy_method   = :git
-  deploy.branch   = ''
-end
