@@ -29,6 +29,14 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 ##
+# Using external pipeline emberjs strategy
+activate :external_pipeline,
+  name: :ember,
+  command: "cd client/ && ember #{build? ? :build : :serve} --environment #{config[:environment]}",
+  source: "client/dist",
+  latency: 2
+
+##
 # Extra Tips
 # with alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
