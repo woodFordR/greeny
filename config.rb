@@ -16,7 +16,7 @@ activate :autoprefixer do |prefix|
 end
 
 activate :livereload
-set :js_dir, "javascripts"
+set :js_dir, "frontend/app"
 
 configure :build do
   activate :minify_css
@@ -33,8 +33,8 @@ page '/*.txt', layout: false
 # Using external pipeline emberjs strategy
 activate :external_pipeline,
   name: :ember,
-  command: "cd source/client && ember #{build? ? :build : :serve} --environment #{config[:environment]}",
-  source: "source/client/dist",
+  command: "cd source/frontend && ember #{build? ? :build : :serve} --environment #{config[:environment]}",
+  source: "frontend/dist",
   latency: 2
 
   ##

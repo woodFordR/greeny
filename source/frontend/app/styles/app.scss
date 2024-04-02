@@ -1,0 +1,13 @@
+/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@import "@hashicorp/design-system-components";
+
+body {
+  background-color: aqua;
+  color: #333;
+}
+
+span {
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 24px;
+}
