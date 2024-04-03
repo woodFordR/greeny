@@ -8,7 +8,7 @@ body {
     var(--token-color-waypoint-gradient-primary-stop),
     var(--token-color-nomad-gradient-primary-start));
   background-size: 400%;
-  animation: gradient 5s ease infinite;
+  animation: gradient 15s ease infinite;
   height: 100vh;
   color: var(--token-color-packer-foreground);
 }
