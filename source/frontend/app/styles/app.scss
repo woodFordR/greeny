@@ -13,6 +13,15 @@ body {
   color: var(--token-color-packer-foreground);
 }
 
+aside {
+  padding-right: 5em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--token-color-packer-foreground);
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -23,28 +32,4 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
-}
-
-a {
-  text-decoration: none;
-  color: var(--token-color-packer-foreground);
-}
-
-nav {
-  height: 4em;
-  span {
-    display: inline-block;
-    padding: 0 20px;
-    font-size: 1.5em;  
-  }
-}
-
-footer {
-  color: var(--token-color-packer-foreground);
-}
-
-.container {
-  max-width: 1024px;
-  min-height: 100vh;
-  margin: 0 auto;
 }
