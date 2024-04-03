@@ -2,12 +2,49 @@
 @import "@hashicorp/design-system-components";
 
 body {
-  background-color: aqua;
-  color: #333;
+  // background-color: var(--token-color-nomad-gradient-primary-start);
+  background: linear-gradient(
+    -45deg,
+    var(--token-color-waypoint-gradient-primary-stop),
+    var(--token-color-nomad-gradient-primary-start));
+  background-size: 400%;
+  animation: gradient 5s ease infinite;
+  height: 100vh;
+  color: var(--token-color-packer-foreground);
 }
 
-span {
-  padding-right: 10px;
-  padding-left: 10px;
-  font-size: 24px;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+a {
+  text-decoration: none;
+  color: var(--token-color-packer-foreground);
+}
+
+nav {
+  height: 4em;
+  span {
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 1.5em;  
+  }
+}
+
+footer {
+  color: var(--token-color-packer-foreground);
+}
+
+.container {
+  max-width: 1024px;
+  min-height: 100vh;
+  margin: 0 auto;
 }

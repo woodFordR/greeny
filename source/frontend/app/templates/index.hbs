@@ -1,10 +1,12 @@
-<div class="links">
-  <LinkTo @route="about">
-    <FlightIcon @name="loading" /><span>about</span>
-  </LinkTo>
-  <LinkTo @route="contact">
-    <FlightIcon @name="loading" /><span>contact</span>
-  </LinkTo>
-</div>
-
-<h1>adam's collection of things</h1>
+<Hds::PageHeader as |PH|>
+  <PH.Title>adam's collection of things</PH.Title>
+  <PH.Breadcrumb>
+    <Hds::Breadcrumb>
+      <Hds::Breadcrumb::Item @text="organization" @icon="terminal" />
+      <Hds::Breadcrumb::Item @text="project" @icon="layers" />
+    </Hds::Breadcrumb>
+  </PH.Breadcrumb>
+  <PH.Badges>
+    <Hds::Badge @text="working" @icon="rocket" @color="neutral-dark-mode" @iconPosition="trailing" />
+  </PH.Badges>
+</Hds::PageHeader>
