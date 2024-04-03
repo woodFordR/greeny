@@ -1,0 +1,48 @@
+<Hds::AppFrame as |Frame|>
+  <Frame.Sidebar>
+    <div class="links">
+      <Hds::Button
+        @isIconOnly={{true}}
+        @icon="code"
+        @route="index"
+        @text="index"
+        @color="tertiary"
+      />
+      <Hds::Button
+        @isIconOnly={{true}}
+        @icon="robot"
+        @route="about"
+        @text="about"
+        @color="tertiary"
+      />
+      <Hds::Button
+        @isIconOnly={{true}}
+        @icon="mail"
+        @route="contact"
+        @text="contact"
+        @color="tertiary"
+      />
+      <Hds::Button
+        @isIconOnly={{true}}
+        @text="x"
+        @color="tertiary"
+        @icon="twitter-x"
+        @iconPosition="trailing"
+        @href="https://twitter.com/akaewell"
+      />
+
+      <Hds::Button
+        @isIconOnly={{true}}
+        @text="github"
+        @color="tertiary"
+        @icon="github"
+        @iconPosition="trailing"
+        @href="https://github.com/woodFordR"
+      />
+    </div>
+  </Frame.Sidebar>
+
+  <Frame.Main>
+    {{outlet}}
+  </Frame.Main>
+</Hds::AppFrame>

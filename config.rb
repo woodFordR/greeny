@@ -15,11 +15,12 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
-##
-# Deployment in config
-activate :deploy do |deploy|
-  deploy.deploy_method   = :git
-  deploy.branch   = ''
+activate :livereload
+set :js_dir, "frontend/app"
+
+configure :build do
+  activate :minify_css
+  activate :minify_javascript, compressor: Terser.new
 end
 
 ##
@@ -27,6 +28,23 @@ end
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+
+##
+# Using external pipeline emberjs strategy
+activate :external_pipeline,
+  name: :ember,
+  command: "cd source/frontend && ember #{build? ? :build : :serve} --environment #{config[:environment]}",
+  source: "frontend/dist",
+  latency: 2
+
+  ##
+# Deployment in config
+activate :deploy do |deploy|
+  deploy.deploy_method   = :git
+  deploy.branch   = ''
+end
+
+  
 
 ##
 # Extra Tips
@@ -57,7 +75,3 @@ page '/*.txt', layout: false
 # build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript, compressor: Terser.new
-# end

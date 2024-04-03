@@ -1,0 +1,35 @@
+/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@import "@hashicorp/design-system-components";
+
+body {
+  // background-color: var(--token-color-nomad-gradient-primary-start);
+  background: linear-gradient(
+    -45deg,
+    var(--token-color-waypoint-gradient-primary-stop),
+    var(--token-color-nomad-gradient-primary-start));
+  background-size: 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  color: var(--token-color-packer-foreground);
+}
+
+aside {
+  padding-right: 5em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--token-color-packer-foreground);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
